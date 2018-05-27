@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2f2"
+    android:orientation="vertical"
+    tools:context="com.taisau.substation.ui.setting.SettingActivity">
+
+    <include layout="@layout/content_setting_title_bar" />
+
+    <!-- <include layout="@layout/content_setting_interval_view" />-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_ddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white_default"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_display_setting"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/device_setting"
+
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:src="@mipmap/ic_go" />
+        </RelativeLayout>
+
+        <!-- <View
+             android:layout_width="738dp"
+             android:layout_height="1dp"
+             android:layout_marginStart="30dp"
+             android:background="@color/color_ddd" />-->
+
+        <RelativeLayout
+            android:id="@+id/rl_compare_setting"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/compare_setting"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:src="@mipmap/ic_go" />
+        </RelativeLayout>
+
+        <!--<View
+            android:layout_width="738dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:background="@color/color_ddd" />-->
+
+        <RelativeLayout
+            android:id="@+id/rl_device_setting"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/device_setting"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:src="@mipmap/ic_go" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="738dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:background="@color/color_ddd" />
+
+        <RelativeLayout
+            android:id="@+id/rl_network_setting"
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/network_setting"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:src="@mipmap/ic_go" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_ddd" />
+
+    <RelativeLayout
+        android:id="@+id/rl_update_setting"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@color/color_white_default"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_update_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:text="@string/update_version"
+            android:textColor="@color/color_333"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:id="@+id/iv_new_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/tv_update_setting"
+            android:src="@mipmap/ic_new"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="30dp"
+            android:textSize="26sp"
+            tools:text="TAISAU1.0" />
+    </RelativeLayout>
+
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_ddd" />-->
+    <RelativeLayout
+        android:id="@+id/rl_restore_default"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@color/color_white_default">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/recovery_default_value"
+            android:textColor="@color/color_333"
+            android:textSize="26sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+</LinearLayout>
+

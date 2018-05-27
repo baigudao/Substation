@@ -1,0 +1,97 @@
+<resources>
+
+
+    <string name="app_name">配電箱</string>
+    <!-- Main -->
+    <string name="main_use_tips">使用提示：</string>
+
+    <!-- Setting -->
+
+    <!-- History -->
+    <string name="compare_history">歷史記錄</string>
+    <string name="history_count">共有 %1$d 條記錄</string>
+    <string name="show_count">當前已展示 %1$d 條記錄</string>
+    <string name="ic_card_num">ic卡號：%1$s</string>
+    <string name="time_instance">時間：%1$s</string>
+
+    <!-- Person -->
+    <string name="person_list">人員列表</string>
+    <string name="search_hint">請輸入 IC 卡號搜索</string>
+    <string name="no_content">沒有任何內容</string>
+    <string name="compare_result_info">比對結果信息</string>
+    <string name="display_setting">顯示設置</string>
+    <string name="compare_setting">比對設置</string>
+    <string name="device_setting">設備設置</string>
+    <string name="network_setting">網絡設置</string>
+    <string name="update_version">版本更新</string>
+    <string name="recovery_default_value">恢復出廠設置</string>
+    <string name="setting">設置</string>
+    <string name="alive_check">活體檢測</string>
+    <string name="check_face_sound_tip">檢測人臉語音提示</string>
+    <string name="min_value">最小值</string>
+    <string name="max_value">最大值</string>
+    <string name="compare_threshold_value">比對閾值</string>
+    <string name="basic_compare">基本比對</string>
+    <string name="hard_compare">嚴格比對</string>
+    <string name="diy_value">自定義</string>
+    <string name="diy_threshold_value">自定義閾值</string>
+    <string name="ip_server">服務器IP:</string>
+    <string name="port_server">服務器端口:</string>
+    <string name="ip_gate">閘機IP:</string>
+    <string name="port_gate">閘機端口:</string>
+    <string name="setting_success">設置成功</string>
+    <string name="setting_fail">設置失敗</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="ip_format">格式：xxx.xxx.xxx.xxx</string>
+    <string name="ip_format_message">注意：地址以\".\"分隔開</string>
+    <string name="no_ip">IP 未設置</string>
+    <string name="person_no_import">無效卡，請先註冊</string>
+    <!--<string name="person_no_have">暫時無數據，無法比對！</string>-->
+    <string name="multiple_person">查詢到多人，請到服務器刪除</string>
+    <string name="compare_pass">比對通過</string>
+    <string name="compare_fail">比對失敗</string>
+    <string name="soft_storage">軟件佔用存儲</string>
+    <string name="use_tips_content">1.請將IC卡放置閱讀器上；\n2.IC卡讀取完成後請正對攝像頭，確保能檢測到完整、正面頭像；\n3.比對完成後請取走卡</string>
+    <string name="history_info">記錄詳情</string>
+    <string name="score_instance">分值：%1$2.1f</string>
+    <string name="img_register">註冊照片</string>
+    <string name="img_real">現場照片</string>
+    <string name="person_info">人員信息：</string>
+    <string name="ic_num">IC卡號碼：</string>
+    <string name="init_device">初始化設備</string>
+    <string name="init_warn_info">警告：恢復出廠設置將會清空所有數據\n確定恢復嗎？</string>
+    <string name="clear_warn_info">警告：該操作將會清除掉歷史記錄，請謹慎操作！</string>
+    <string name="clear_history">清除記錄</string>
+    <string name="port_format">格式：xxxx</string>
+    <string name="compare_pass_score">比對通過 分值：</string>
+    <string name="compare_fail_score">比對失敗 分值：</string>
+    <string name="person_ic_no_accord">身份不符！</string>
+    <string name="alive_tips">檢測到人臉，請左右擺動臉部以便通過活體檢測</string>
+    <string name="alive_pass">通過活體檢測，正對攝像頭進行比對</string>
+    <string name="person_save_success">下發人員，添加成功</string>
+    <string name="device_location">設備位置:</string>
+    <string name="device_name">設備名稱:</string>
+    <string name="tips_location">如：南門1、北門2等，方便服務器區分設備</string>
+    <string name="tips_input_limit">請注意輸入的字數限制</string>
+    <string name="tips_connect_exception">連接服務器異常，請檢查IP和端口號是否正確</string>
+    <string name="device_location_never_set">設備位置未設置</string>
+    <string name="tips_connect_usb">\n正在連接Usb設備…\n</string>
+    <string name="no_data">沒有數據</string>
+    <string name="data_checking">正在查詢…</string>
+    <string name="load_more_tip">加載完全部內容</string>
+    <string name="data_loading">正在加載中…</string>
+    <string name="template_picture_is_null">比對失敗，未註冊人臉模板</string>
+    <string name="out_of_range">IC卡不在有效使用期限或地點內</string>
+    <string name="restore_default_value_success">恢復默認值成功</string>
+    <string name="person_save_fail">下發人員，添加失敗</string>
+    <string name="take_picture_tip">證件讀取完成，請正對攝像頭拍照</string>
+    <string name="in_or_out">出入口設置:</string>
+    <string name="doorway_in">入</string>
+    <string name="doorway_out">出</string>
+    <string name="algorithm_key">算法Key:</string>
+    <string name="start">開始使用</string>
+    <string name="configuration_null">配置項不能為空</string>
+    <string name="error_format">IP格式錯誤</string>
+    <string name="algorithm_key_error">算法Key錯誤</string>
+</resources>

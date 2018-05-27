@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="166dp">
+
+    <ImageView
+        android:id="@+id/history_list_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="40dp" />
+    <!--   <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="19dp"
+           android:textColor="@color/color_7a7a7a"
+           android:text="姓名：李雷雷"
+           android:layout_marginLeft="55dp"
+           android:layout_marginTop="30dp"
+           android:layout_toRightOf="@+id/history_list_avatar"
+           android:id="@+id/history_list_name"/>-->
+    <TextView
+        android:id="@+id/history_list_card_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="21dp"
+        android:layout_toEndOf="@+id/history_list_avatar"
+        android:textColor="@color/color_7a7a7a"
+        android:textSize="19sp"
+        tools:text="身份证号：420303199410111518" />
+
+    <TextView
+        android:id="@+id/history_list_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/history_list_card_id"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="21dp"
+        android:layout_toEndOf="@+id/history_list_avatar"
+        android:textColor="@color/color_7a7a7a"
+        android:textSize="19sp"
+        tools:text="核查结果：核查通过" />
+
+    <TextView
+        android:id="@+id/history_list_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="21dp"
+        tools:text="日期：2017.03.28"
+        android:textColor="@color/color_7a7a7a"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/tv_upload_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/history_list_time"
+        android:layout_below="@+id/history_list_time"
+        android:layout_marginTop="21dp"
+        android:textColor="@color/color_0dd63c"
+        android:textSize="19sp"
+        android:visibility="gone"
+        tools:text="上传成功" />
+    <!--<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="40dp" />-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_gray_cfcfcf" />
+
+</RelativeLayout>

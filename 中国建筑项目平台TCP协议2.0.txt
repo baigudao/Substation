@@ -1,0 +1,258 @@
+
+数据包格式
+	byte[] datas = new byte["TS_HEAD".Length + 12 + MsgContent.Length + "TS_TAIL".Length];	//12 = sizeof((int)EMESSAGETYPE) + sizeof((int)ECOMMANDTYPE) + sizeof(MsgContent.Length)
+	datas[0] ~ [6]:                         "TS_HEAD" --> byte[7]
+	datas[7] ~ [10]:                        (int)MsgContent.Length --> byte[4] 低位在前，高位在后
+	datas[11] ~ [14]:                       (int)EMESSAGETYPE --> byte[4] 低位在前，高位在后
+	datas[15] ~ [18]:                       (int)ECOMMANDTYPE --> byte[4] 低位在前，高位在后
+	datas[19] ~ [datas.Count-8]:            MsgContent
+	datas[datas.Count-7] ~ [datas.Count-1]: "TS_TAIL" --> byte[7]
+	//注：MsgContent为MsgXXX类序列化的byte[]，编码格式为utf-8，MsgContent.Length也就是序列化后byte[]的长度
+	//byte[]数组和int之间的转换参考：
+	//http://blog.csdn.net/sunnyfans/article/details/8286906
+
+
+消息命令类型
+    #region 以下两个类型组合成为协议类型
+
+    /// <summary>
+    /// 消息类型
+    /// </summary>
+    public enum  EMESSAGETYPE
+    {
+        MSG_UNKNOW = -1,
+
+        MSG_DATA,
+        MSG_CONTROL,
+        MSG_CMD,
+
+        MSG_COUNT
+    }
+
+    /// <summary>
+    /// 命令类型
+    /// </summary>
+    public enum ECOMMANDTYPE
+    {
+        NET_COMMAND_UNKNOW = -1,
+
+        #region 门禁机协议
+        NET_UPLOAD_CARDINFO                 = 0x0000,   //上传身份证信息
+        NET_UPLOAD_CARDINFO_BACK            = 0x0001,   //上传身份证信息的返回
+        NET_UPLOAD_RECORD                   = 0x0002,   //上传比对记录
+        NET_UPLOAD_RECORD_BACK              = 0x0003,   //上传比对记录的返回
+        NET_UPLOAD_CONFIG                   = 0x0004,   //上传门禁机配置
+        NET_UPLOAD_CONFIG_BACK              = 0x0005,   //上传门禁机配置的返回
+        NET_CHECK_IDCARD                    = 0x0006,   //上传检测身份证信息是否已存在
+        NET_CHECK_IDCARD_BACK               = 0x0007,   //上传检测身份证信息是否已存在的返回
+        NET_KEEPLIVE                        = 0x0008,   //心跳
+        NET_DOWNLOAD_CONTROL                = 0x0009,   //下发控制命令
+        NET_DOWNLOAD_CONFIG                 = 0x000a,   //下发门禁机配置
+        NET_DOWNLOAD_CONFIG_BACK            = 0x000b,   //下发门禁机配置的返回
+        NET_DOWNLOAD_OPENDOOR               = 0x000c,   //下发开门命令
+        NET_DOWNLOAD_ROSTER_INFO_UPDATE     = 0x000d,   //下发员工信息更新（新增、修改）
+        NET_DOWNLOAD_ROSTER_PHOTO_UPDATE    = 0x000e,   //下发员工照片更新（新增、修改）
+        NET_DOWNLOAD_ROSTER_REMOVE          = 0x000f,   //下发员工移除
+        NET_DOWNLOAD_ROSTER_CLEAN           = 0x0010,   //下发员工清空
+        NET_DOWNLOAD_ROSTER_OPERATE_BACK    = 0x0011,   //下发员工操作的返回
+        NET_UPLOAD_STRANGER_RECORD          = 0x0012,   //上传陌生人记录
+        NET_UPLOAD_STRANGER_RECORD_BACK     = 0x0013,   //上传陌生人记录的返回
+        #endregion
+
+        #region 注册访客一体机协议
+        NET_REGISTER_DEVICE_KEEPLIVE        = 0x8000,   //注册机心跳
+        NET_UPLOAD_REGISTER_DEVICE_INFO     = 0x8001,   //注册机信息上传
+        NET_UPLOAD_REGISTER_DEVICE_INFO_BACK= 0x8101,   //注册机信息返回
+        NET_UPLOAD_GET_BUILDINGS_HOUSES     = 0x8002,   //获取楼号房号集合
+        NET_DOWNLOAD_BUILDINGS_HOUSES       = 0x8203,   //楼号房号集合下发
+        NET_DOWNLOAD_BUILDINGS_HOUSES_BACK  = 0x8303,   //楼号房号集合返回
+        NET_UPLOAD_VISITOR_CHECKIN          = 0x8004,   //访客登记上传
+        NET_UPLOAD_VISITOR_CHECKIN_BACK     = 0x8104,   //访客登记返回
+        NET_UPLOAD_VISITOR_CHECKOUT         = 0x8005,   //访客签离上传
+        NET_UPLOAD_VISITOR_CHECKOUT_BACK    = 0x8105,   //访客签离返回
+        NET_UPLOAD_WHITEROSTER_REGISTER     = 0x8006,   //白员工注册上传
+        NET_UPLOAD_WHITEROSTER_REGISTER_BACK= 0x8106,   //白员工注册返回
+        #endregion
+
+        //NET_COMMAND_COUNT,
+    }
+
+
+    #endregion
+
+	
+消息主体
+    #region 门禁机协议
+    public class MsgKeepLive : BaseDeailMsg
+    {
+        public string Serial { get; set; }      //设备序列号
+    }
+
+    public enum EPassingMode
+    {
+        EPM_Gated   = 0,    //门禁模式
+        EPM_Visitor = 1,    //访客模式
+    }
+	//上传配置
+    public class MsgUpConfig : BaseDeailMsg
+    {
+        public string Serial { get; set; }              //设备序列号
+        public string DeviceName { get; set; }          //设备名
+        public string InstallSite { get; set; }         //安装地址
+        public string DetectScore { get; set; }     //人证比对阈值
+        public string WLDetectThreshold { get; set; }   //员工自动比对阈值
+    }
+//上传配置 返回
+    public class MsgUpConfigBack : BaseDeailMsg
+    {
+        public string Serial { get; set; }              //设备序列号
+        public bool Result { get; set; }                //是否成功
+    }
+	//下发配置      接收到下发的配置并更改后，再次上传一次配置
+    public class MsgDownConfig : BaseDeailMsg
+    {
+        public string Channel { get; set; }             //门禁机通道，也就是设备序列号
+        public string DeviceName { get; set; }          //设备名
+        public string InstallSite { get; set; }         //安装地址
+        public string DetectScore { get; set; }     //人证比对阈值
+        public string WLDetectThreshold { get; set; }   //员工自动比对阈值
+    }
+	//下发关机/重启命令
+    public class MsgDownControl : BaseDeailMsg
+    {
+        public int ControlNum { get; set; }             //1关机 2重启设备
+    }
+	//下发开门命令
+    public class MsgDownOpenDoor : BaseDeailMsg
+    {
+        public string Channel { get; set; }             //门禁机通道，也就是设备序列号
+    }
+
+    public enum EDetectResult
+    {
+        EDR_UNKNOW = -1,
+
+        EDR_SUCCESS,                //成功
+        EDR_FAILED,                 //失败
+        EDR_REGISTER,               //提示登记
+
+        EDR_COUNT,
+    }
+
+    public enum ECompareType
+    {
+        EDR_UNKNOW = -1,
+
+        ECT_IDCARD_FACE = 0,        //刷卡人脸比对
+        ECT_ROSTER_FACE = 1,        //员工人脸比对
+        ECM_ICCARD_FACE = 2,        //IC卡人脸比对
+        ECM_QRCODE_FACE = 3,        //二维码人脸比对
+    }
+
+    //上传比对记录
+    public class MsgManRecord : BaseDeailMsg
+    {
+        public string Uid { get; set; }                 //唯一标识符
+        public string CIc { get; set; }                 //IC卡号
+        public ECompareType CompareType { get; set; }   //比对模式
+        public string Serial { get; set; }              //设备序列号
+        public string CreateTime { get; set; }          //比对时间(格式"yyyy-MM-dd HH:mm:ss")
+        public string DScore { get; set; }              //比对分数
+        public EDetectResult DRes { get; set; }         //比对结果
+        public string TemplateImg { get; set; }         //模板照
+        public string SiteImg { get; set; }             //现场照
+        public int InOut { get; set; }                  //出入口   1为入口  2为出口
+        public int UpdateState { get; set; }            //更新状态  1实时数据 2历史数据
+    }
+
+    public class MsgManRecordBack : BaseDeailMsg
+    {
+        public string Uid { get; set; }                 //唯一标识符
+        public string CreateTime { get; set; }          //比对时间(格式"yyyy-MM-dd HH:mm:ss")
+        public bool Result { get; set; }                //是否成功
+    }
+
+    //员工更新（新增、修改）
+    public class MsgStaffInfoUpdate : BaseDeailMsg
+    {
+        public string OperateTime { get; set; }         //操作时间(格式"yyyyMMddHHmmssfff")
+        public string Uid { get; set; }                 //唯一标识符
+        public string CIc { get; set; }                 //IC卡号
+        public string EnterDate { get; set; }           //受雇日期   //"2018-02-22"
+        public string LeaveDate { get; set; }           //离职日期
+        public string SiteBeginDate { get; set; }       //地点开始日期
+        public string SiteEndDate { get; set; }         //地点结束日期
+        public string SafetyCardExpiryDate { get; set; }//安全卡到期日期
+    }
+
+    //员工照片更新（新增、修改）
+    public class MsgStaffPhotoUpdate : BaseDeailMsg
+    {
+        public string OperateTime { get; set; }         //操作时间(格式"yyyyMMddHHmmssfff")
+        public string Uid { get; set; }                 //唯一标识符
+        public int PhotoIndex { get; set; }     //照片序号(照片所在的数据库照片表的序号)
+        public string Photo { get; set; }               //照片（base64信息）
+    }
+
+    // 员工移除
+    public class MsgStaffRemove : BaseDeailMsg
+    {
+        public string OperateTime { get; set; }         //操作时间(格式"yyyyMMddHHmmssfff")
+        public string Uid { get; set; }                 //唯一标识符
+    }
+
+    // 员工清空
+    public class MsgStaffClean : BaseDeailMsg
+    {
+        public string OperateTime { get; set; }         //操作时间(格式"yyyyMMddHHmmssfff")
+    }
+
+    // 员工操作返回
+    public class MsgStaffOperateBack : BaseDeailMsg
+    {
+        public string Serial { get; set; }              //设备序列号
+        public string OperateTime { get; set; }         //操作时间(格式"yyyyMMddHHmmssfff")
+        public ECOMMANDTYPE OperateType { get; set; }   //操作类型（员工信息更新、员工照片更新、员工删除、员工清空）
+        public bool IsSucceed { get; set; }             //是否成功
+    }
+    #endregion
+
+    #region 注册机协议
+    public class MsgRegisterDeviceKeepLive : BaseDeailMsg
+    {
+        public string sn { get; set; }  //设备序列号
+    }
+
+    public class MsgRegisterDeviceInfo : BaseDeailMsg
+    {
+        public string sn;               //设备序列号
+        public string name;             //设备名称
+        public string addr;             //安装地址
+    }
+
+    public class MsgRegisterDeviceInfoBack : BaseDeailMsg
+    {
+        public string sn;               //设备序列号
+        public bool result;             //上传结果 成功：true 失败：false
+    }
+
+    public enum EFailCause
+    {
+        EFC_Unknow=0,
+        EFC_IcCardUnregistered=1,       //IC卡未注册
+    }
+
+    public class MsgStaffRegister : BaseDeailMsg
+    {
+        public string sn;               //设备序列号
+        public string ic_card;          //IC卡号
+        public string[] face_photo;     //现场照集合
+    }
+
+    public class MsgStaffRegisterBack : BaseDeailMsg
+    {
+        public string ic_card;          //IC卡号
+        public bool result;             //上传结果 false:失败 true:成功
+        public EFailCause fail_cause;   //失败原因
+    }
+    #endregion

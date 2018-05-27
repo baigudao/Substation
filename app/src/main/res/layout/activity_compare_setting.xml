@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2f2"
+    android:orientation="vertical"
+    tools:context="com.taisau.substation.ui.setting.SettingActivity">
+
+    <include layout="@layout/content_setting_title_bar" />
+
+    <!-- <include layout="@layout/content_setting_interval_view" />-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_ddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white_default"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="768dp"
+            android:layout_height="1dp"
+            android:background="@color/color_ddd" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="黑名单预警"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <Switch
+                android:id="@+id/switch_black_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:thumb="@drawable/ic_switch_thumb"
+                android:track="@drawable/switch_track_selector" />
+        </RelativeLayout>
+
+        <!-- <View
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:layout_marginStart="30dp"
+             android:background="@color/color_ddd" />-->
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/alive_check"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <Switch
+                android:id="@+id/switch_is_alive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView4"
+                android:layout_alignBottom="@+id/textView4"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:thumb="@drawable/ic_switch_thumb"
+                android:track="@drawable/switch_track_selector" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:background="@color/color_ddd" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <TextView
+                android:id="@+id/tv_whether_compare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="是否人脸比对"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <Switch
+                android:id="@+id/switch_is_compare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_whether_compare"
+                android:layout_alignBottom="@+id/tv_whether_compare"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:thumb="@drawable/ic_switch_thumb"
+                android:track="@drawable/switch_track_selector" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="30dp"
+            android:background="@color/color_ddd" />
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/check_face_sound_tip"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <Switch
+                android:id="@+id/switch_check_face_tts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:thumb="@drawable/ic_switch_thumb"
+                android:track="@drawable/switch_track_selector" />
+        </RelativeLayout>
+
+        <!--     <View
+                 android:layout_width="match_parent"
+                 android:layout_height="1dp"
+                 android:layout_marginStart="30dp"
+                 android:background="@color/color_ddd" />-->
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="年龄预警"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <Switch
+                android:id="@+id/switch_age_warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:thumb="@drawable/ic_switch_thumb"
+                android:track="@drawable/switch_track_selector" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_age_warning"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_min_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="166dp"
+                android:text="@string/min_value"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+
+            <com.taisau.substation.widget.RegionNumberEditText
+                android:id="@+id/et_min_age"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/tv_min_age"
+                android:background="@drawable/edittext_background"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="@color/color_666"
+                android:textSize="26sp"
+                tools:text="30" />
+
+            <TextView
+                android:id="@+id/tv_max_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="60dp"
+                android:layout_toEndOf="@+id/et_min_age"
+                android:text="@string/max_value"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+
+            <com.taisau.substation.widget.RegionNumberEditText
+                android:id="@+id/et_max_age"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/tv_max_age"
+                android:background="@drawable/edittext_background"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textColor="@color/color_666"
+                android:textSize="26sp"
+                tools:text="50" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_ddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white_default"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88dp">
+
+            <TextView
+                android:id="@+id/tv_compare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="@string/compare_threshold_value"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/tv_compare"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_easy_compare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/setting_radio_button_selector"
+                    android:padding="10dp"
+                    android:text="@string/basic_compare"
+                    android:textColor="@color/color_666"
+                    android:textSize="26sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_hard_compare"
+                    style="@style/setting_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:padding="10dp"
+                    android:text="@string/hard_compare"
+                    android:textColor="@color/color_666"
+                    android:textSize="26sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_diy_compare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:button="@drawable/setting_radio_button_selector"
+                    android:padding="10dp"
+                    android:text="@string/diy_value"
+                    android:textColor="@color/color_666"
+                    android:textSize="26sp" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_diy_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_seekBar_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="0"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+
+            <SeekBar
+                android:id="@+id/seekBar_setting"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/tv_seekBar_min"
+                android:max="100"
+                android:progress="50"
+                android:progressBackgroundTint="@color/color_ccc"
+                android:thumb="@mipmap/ic_progressbar_point" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/seekBar_setting"
+                android:text="100"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_diy_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="@dimen/dp10"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_diy_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/diy_threshold_value"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+
+            <com.taisau.substation.widget.RegionNumberEditText
+                android:id="@+id/et_diy_value"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="14dp"
+                android:layout_toEndOf="@+id/tv_diy_value"
+                android:background="@drawable/edittext_background"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="50"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

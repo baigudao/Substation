@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.taisau.substation.ui.history.PrintHistoryActivity">
+
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:background="@drawable/title_background_blue"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@mipmap/ic_back" />
+            &lt;!&ndash;    android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"&ndash;&gt;
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_setting_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="记录详情"
+            android:textColor="@color/color_white_default"
+            android:textSize="32dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/print_btn"
+            android:text="打印"
+            android:textColor="@color/color_1d7cf6"
+            android:textSize="24dp"
+            android:visibility="gone" />
+    </RelativeLayout>-->
+    <include layout="@layout/content_setting_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ddd"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="188dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white_fff">
+
+            <ImageView
+                android:id="@+id/print_compare_info_img"
+                android:layout_width="420dp"
+                android:layout_height="168dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/his_compare_pass" />
+            <TextView
+                android:id="@+id/print_compare_info_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/print_compare_info_img"
+               android:layout_marginTop="@dimen/dp40"
+                android:layout_marginStart="180dp"
+                android:gravity="center"
+                tools:text="比对成功"
+                android:textColor="@color/color_0dd63c"
+                android:textSize="40sp" />
+            <TextView
+                android:id="@+id/print_compare_info_res"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/print_compare_info_img"
+                android:layout_alignStart="@id/print_compare_info_img"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="180dp"
+                android:gravity="center"
+                tools:text="分值：70分"
+                android:textColor="@color/color_0dd63c"
+                android:textSize="38sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/print_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_fff"
+            android:paddingStart="30dp"
+            android:singleLine="true"
+            tools:text="时间："
+            android:textColor="@color/color_333"
+            android:textSize="24sp"
+            tools:ignore="RtlSymmetry" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_fff"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/print_card_img"
+                android:layout_width="171dp"
+                android:layout_height="228dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginTop="10dp" />
+
+            <ImageView
+                android:id="@+id/print_face_img"
+                android:layout_width="171dp"
+                android:layout_height="228dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/print_card_img" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/print_card_img"
+                android:layout_alignStart="@+id/print_card_img"
+                android:layout_below="@id/print_card_img"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="@string/img_register"
+                android:textColor="@color/color_132D4E"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/print_face_img"
+                android:layout_alignStart="@+id/print_face_img"
+                android:layout_below="@id/print_face_img"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="@string/img_real"
+                android:textColor="@color/color_132D4E"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_fff"
+            android:paddingStart="30dp"
+            android:singleLine="true"
+            android:text="@string/person_info"
+            android:textColor="@color/color_333"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_fff"
+            android:paddingStart="30dp"
+            android:paddingTop="@dimen/dp20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ic_num"
+                android:textColor="@color/color_333"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/print_info_card2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="70dp"
+                android:maxEms="10"
+                android:singleLine="true"
+                tools:text="420303198910241523"
+                android:textColor="@color/color_333"
+                android:textSize="22sp" />
+
+
+           <!-- <TextView
+                android:id="@+id/print_info_valid_time1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/print_info_card1"
+                android:layout_marginBottom="10dp"
+                android:text="有效时间："
+                android:textColor="@color/color_333"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/print_info_valid_time2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/print_info_valid_time1"
+                android:layout_marginBottom="30dp"
+                android:layout_marginEnd="70dp"
+                android:gravity="end"
+                android:maxEms="20"
+                android:text="20161015"
+                android:textColor="@color/color_333"
+                android:textSize="22sp" />-->
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

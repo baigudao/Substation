@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/color_44"
+    android:gravity="center"
+    android:layout_height="match_parent">
+   <!-- <include layout="@layout/content_main_bottom_use_tips"
+        android:visibility="gone"/>-->
+
+    <include
+        layout="@layout/content_main_bottom_compare_info"
+        android:visibility="gone"
+        tools:visibility = "visible"/>
+
+</RelativeLayout>

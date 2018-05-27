@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f2f2f2"
+    android:orientation="vertical"
+    tools:context="com.taisau.substation.ui.setting.SettingActivity">
+
+    <include layout="@layout/content_setting_title_bar" />
+
+    <!--  <include layout="@layout/content_setting_interval_view" />-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/color_ddd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@color/color_white_default"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:text="@string/device_name"
+            android:textColor="@color/color_333"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="564dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/edittext_background"
+            android:gravity="center_vertical"
+            android:hint="@string/tips_location"
+            android:paddingStart="@dimen/dp10"
+            android:textColor="@color/color_333"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/color_ddd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:background="@color/color_white_default">
+
+        <TextView
+            android:id="@+id/tv_compare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:text="@string/in_or_out"
+            android:textColor="@color/color_333"
+            android:textSize="26sp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:layout_toEndOf="@+id/tv_compare"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_doorway_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/setting_radio_button_selector"
+                android:padding="10dp"
+                android:text="@string/doorway_out"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+
+            <RadioButton
+                android:id="@+id/rb_doorway_in"
+                style="@style/setting_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:padding="10dp"
+                android:text="@string/doorway_in"
+                android:textColor="@color/color_666"
+                android:textSize="26sp" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white_default"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp3"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="@dimen/dp3"
+            android:gravity="center"
+            android:text="广告标题："
+            android:textColor="@color/color_999"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="30dp"
+            android:background="@color/color_ddd" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/color_white_default">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="30dp"
+                android:text="主标题:"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tv_main_title"
+                android:layout_width="564dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp10"
+                android:textColor="@color/color_333"
+                android:textSize="24sp"
+                tools:text="主标题" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+
+            android:background="@color/color_white_default"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="副标题:"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="564dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dp10"
+                android:textColor="@color/color_333"
+                android:textSize="24sp"
+                tools:text="副标题" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/color_white_default">
+
+            <TextView
+                android:id="@+id/tv_ad_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:text="广告图片:"
+                android:textColor="@color/color_333"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tv_choose_picture_status"
+                android:layout_width="289dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="33dp"
+                android:layout_toEndOf="@+id/tv_ad_picture"
+                android:background="@drawable/edittext_background"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingStart="@dimen/dp10"
+                android:text="未选择图片"
+                android:textColor="@color/color_999"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="19dp"
+                android:layout_toEndOf="@id/tv_choose_picture_status"
+                android:background="@drawable/setting_button_background"
+                android:text="浏览..."
+                android:textColor="@color/color_999"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="19dp"
+                android:background="@drawable/setting_button_background2"
+                android:text="上传"
+                android:textColor="@color/color_white_default"
+                android:textSize="24sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_usb_insert"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="19dp"
+                android:background="@drawable/setting_button_background2"
+                android:text="U盘导入"
+                android:textColor="@color/color_white_default"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="175dp"
+            android:text="仅可上传一张广告图片,建议选用768*435分辨率的图片"
+            android:textColor="@color/color_666"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/setting_display_ads_img"
+            android:layout_width="708dp"
+            android:layout_height="398dp"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/btn_restore_default_picture"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@drawable/setting_button_background"
+            android:text="恢复默认图片"
+            android:textColor="@color/color_999"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_ddd" />
+
+</LinearLayout>
+

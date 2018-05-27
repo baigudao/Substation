@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white_fff">#FFF</color>
+    <color name="black_000">#000</color>
+    <color name="color_132D4E">#132D4E</color>
+
+
+    <!--old-->
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#2867B7</color>
+    <color name="color_gray_cfcfcf">#cfcfcf</color>
+    <color name="color_white_default">#FFFFFF</color>
+    <color name="color_button_blue_theme">#5294fd</color>
+
+    <color name="color_D8D8D8">#D8D8D8</color>
+    <color name="color_ccc">#ccc</color>
+    <color name="color_f2f2f2">#f2f2f2</color>
+    <color name="color_ddd">#ddd</color>
+    <color name="color_7a7a7a">#7a7a7a</color>
+    <color name="color_44">#444444</color>
+    <color name="color_333">#333</color>
+    <color name="color_666">#666</color>
+    <color name="color_999">#999</color>
+    <color name="color_507097">#507097</color>
+    <color name="color_d5d5d5">#d5d5d5</color>
+    <color name="color_ebebeb">#ebebeb</color>
+    <color name="color_cdcdcc">#cdcdcc</color>
+    <color name="color_6fc7ff">#6fc7ff</color>
+    <color name="color_589fff">#589fff</color>
+    <color name="color_69beff">#69beff</color>
+    <color name="color_3085ee">#3085ee</color>
+    <color name="color_0a73ff">#0a73ff</color>
+    <color name="color_00f6ff">#00f6ff</color>
+    <color name="color_0dd63c">#0dd63c</color>
+    <color name="color_f73030">#f73030</color>
+
+    <color name="color_f4c922">#24ba32</color>
+    <color name="color_ab3232">#ab3232</color>
+    <color name="color_ebf3dc">#ebf3dc</color>
+    <color name="color_24bb32">#24bb32</color>
+</resources>

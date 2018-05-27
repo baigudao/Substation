@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.taisau.substation.ui.history.HistoryListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:background="@drawable/title_background_blue"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@mipmap/ic_back" />
+                <!--    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"-->
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_setting_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/rl_back"
+                android:text="@string/compare_history"
+                android:textColor="@color/color_white_default"
+                android:textSize="32sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:layout_marginEnd="20dp"
+                android:src="@mipmap/out_data"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/history_search_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:src="@mipmap/search_icon" />
+
+            <EditText
+                android:id="@+id/activity_history_search_edit"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="right"
+                android:layout_marginEnd="20dp"
+                android:layout_toStartOf="@+id/history_search_img"
+                android:hint="@string/search_hint"
+                android:singleLine="true"
+                android:textColor="@color/white_fff"
+                android:textColorHighlight="@color/white_fff"
+                android:textColorHint="@color/white_fff"
+                android:textColorLink="@color/white_fff"
+                android:theme="@style/EditTextWhite" />
+        </RelativeLayout>
+
+        <include layout="@layout/content_history_list" />
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/history_to_top"
+        android:layout_width="5dp"
+        android:layout_height="9dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginRight="50dp"
+        app:srcCompat="@mipmap/to_top"
+        tools:layout_editor_absoluteX="-20dp" />
+</android.support.design.widget.CoordinatorLayout>

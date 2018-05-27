@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_44">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/main_compare_img2"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:background="@color/white_fff"
+                android:padding="2dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/main_compare_img1"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="23dp"
+                android:background="@color/white_fff"
+                android:padding="2dp"
+                android:scaleType="fitXY" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/main_compare_info_img"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/compare_pass" />
+
+            <TextView
+                android:id="@+id/main_compare_info_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:gravity="center"
+                android:textSize="25sp"
+                tools:text="比对通过"
+                tools:textColor="@color/color_0dd63c" />
+
+            <TextView
+                android:id="@+id/main_compare_info_res"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/main_compare_info_img"
+                android:layout_alignStart="@id/main_compare_info_img"
+                android:layout_marginBottom="@dimen/dp10"
+                android:layout_marginStart="100dp"
+                android:gravity="center"
+                android:textColor="@color/color_0dd63c"
+                android:textSize="25sp"
+                tools:text="分值：70分" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/main_compare_info_cardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:lineSpacingExtra="5dp"
+            android:text=""
+            android:textColor="@color/white_fff"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <!--@string/compare_result_info-->
+
+    </LinearLayout>
+
+</RelativeLayout>
+

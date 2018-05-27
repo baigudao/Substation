@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_address"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_network_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="26sp"
+        android:textColor="@color/color_333"
+        android:layout_marginStart="30dp"
+        tools:text="本机IP地址:" />
+
+    <TextView
+        android:id="@+id/et_address1"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/color_333"
+        android:layout_toStartOf="@+id/et_address2"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        tools:text="192" />
+<!-- android:inputType="number"
+        android:maxLength="3"-->
+    <TextView
+        android:id="@+id/et_address2"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/color_333"
+        android:layout_toStartOf="@+id/et_address3"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        tools:text="168" />
+
+    <TextView
+        android:id="@+id/et_address3"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/color_333"
+        android:layout_toStartOf="@+id/et_address4"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/et_address4"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:textSize="24sp"
+        android:textColor="@color/color_333"
+        android:layout_marginEnd="90dp"
+        android:background="@drawable/edittext_background"
+        android:gravity="center"
+        tools:text="2" />
+</RelativeLayout>
